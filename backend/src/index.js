@@ -1,9 +1,12 @@
 import express from 'express';
-import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import dotenv from 'dotenv';
 
 // Route imports
+import formRoutes from "./routes/forms.js";
+import submissionRoutes from "./routes/submissions.js";
+import uploadRoutes from "./routes/upload.js";
+
 
 // Load environment variables
 dotenv.config();
@@ -42,6 +45,9 @@ app.get('/', (req, res) => {
 });
 
 // Mount API routers
+app.use("/api/forms", formRoutes);
+app.use("/api", submissionRoutes);  // submission routes include /forms/:id/submissions and /submissions/:id
+// app.use("/api", uploadRoutes);
 
 // Start the server
 const PORT = process.env.PORT || 3000;
