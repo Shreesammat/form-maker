@@ -1,6 +1,6 @@
 import { CategorizeQuestion } from "./CategorizeQuestion";
 import { ClozeQuestion } from "./ClozeQuestion";
-import { ComprehensionQuestion } from "./ComprehensionQuestion";
+import { ComprehensionQuestion } from "./comprehensionQuestion";
 import type { Question } from "@/types/form";
 
 interface QuestionFactoryProps {
